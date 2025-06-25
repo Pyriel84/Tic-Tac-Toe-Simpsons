@@ -1,14 +1,14 @@
-// Tic Tac Toe script
+// Tic Tac Toe script -
 
-// Variables pour les images
+// Variables pour les images 
 const IMAGES = {
-    bart: "/images/tete de bart.png",
-    homer: "/images/tete de homer.jpeg"
+    bart: "./images/tete-de-bart.png",           
+    homer: "./images/tete-de-homer.jpeg"         
 };
 const IMAGES_MODALS = {
-    bart: "/images/bart win.png",
-    homer: "/images/homer win.jpg",
-    draw: "/images/draw.jpg"
+    bart: "./images/bart-win.png",               
+    homer: "./images/homer-win.jpg",             
+    draw: "./images/draw.jpg"                    
 };
 
 // Variables de jeu
@@ -81,17 +81,13 @@ function showCharacter(cell, character) {
     img.src = IMAGES[character];
     img.alt = character === 'bart' ? 'Bart Simpson' : 'Homer Simpson';
     img.style.width = '100%'; 
-    img.style.height = '100%'; 
-
+    img.style.height = '100%';
+    
     img.onerror = function() {
-        console.error(`Error loading image ${character}`);
-        cell.innerHTML = `<div style="color: red; font-size: 12px; text-align: center;">Image<br>missing</div>`;
+        console.error(`Erreur de chargement de l'image: ${this.src}`);
+        cell.innerHTML = `<div style="font-size: 2em; color: #FF6347;">${character === 'bart' ? 'B' : 'H'}</div>`;
     };
-
-    img.onload = function() {
-        console.log(`Image ${character} loaded successfully`);
-    };
-
+    
     cell.appendChild(img);
 }
 
@@ -126,7 +122,7 @@ function updateScores() {
     document.getElementById('homer-score').textContent = scoreHomer;
 }
 
-// Fonction des modales
+// Fonction des modales - 
 function showModalWithImage(message, title, winner) {
     const modalContent = document.querySelector('.modal-content');
     modalContent.className = `modal-content ${winner}-theme victory custom-image`;
@@ -139,18 +135,29 @@ function showModalWithImage(message, title, winner) {
     } else if (winner === 'draw') {
         bgImage = IMAGES_MODALS.draw;
     }
-    modalContent.style.backgroundImage = `url('${bgImage}')`;
-    modalContent.style.backgroundSize = 'cover';
-    modalContent.style.backgroundPosition = 'center';
+    
+    const testImg = new Image();
+    testImg.onload = function() {
+        modalContent.style.backgroundImage = `url('${bgImage}')`;
+        modalContent.style.backgroundSize = 'cover';
+        modalContent.style.backgroundPosition = 'center';
+    };
+    testImg.onerror = function() {
+        console.error(`Image de modal introuvable: ${bgImage}`);
+        modalContent.style.backgroundImage = 'none';
+    };
+    testImg.src = bgImage;
 
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-message').textContent = message;
     document.getElementById('modal').style.display = 'flex';
 }
+
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
     resetGame();
 }
+
 function resetGame() {
     board = ['', '', '', '', '', '', '', '', ''];
     currentPlayer = 'bart';
