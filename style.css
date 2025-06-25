@@ -1,6 +1,6 @@
 body {
     font-family: 'Comic Sans MS', cursive, Arial, sans-serif;
-    background-image: url("/Tic Tac Toe/images/maison background.webp");
+    background-image: url("/images/maison background.webp");
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -73,7 +73,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    background-image: url("/Tic Tac Toe/images/canapé\ score.jpg");
+    background-image: url("/images/canapé\ score.jpg");
     background-size: cover;
     background-position: center;
     background-color: rgba(255, 255, 255, 0.3);
