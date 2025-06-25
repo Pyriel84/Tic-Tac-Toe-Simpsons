@@ -161,5 +161,13 @@ function resetGame() {
     updateTurnDisplay();
 }
 
+// Fonction pour reinitialiser le score
+function resetScores() {
+    scoreBart = 0;
+    scoreHomer = 0;
+    updateScores(); 
+    resetGame();
+}
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', initGame);
