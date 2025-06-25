@@ -2,13 +2,13 @@
 
 // Variables pour les images
 const IMAGES = {
-    bart: "/Tic Tac Toe/images/tete de bart.png",
-    homer: "/Tic Tac Toe/images/tete de homer.jpeg"
+    bart: "/images/tete de bart.png",
+    homer: "/images/tete de homer.jpeg"
 };
 const IMAGES_MODALS = {
-    bart: "/Tic Tac Toe/images/bart win.png",
-    homer: "/Tic Tac Toe/images/homer win.jpg",
-    draw: "/Tic Tac Toe/images/draw.jpg"
+    bart: "/images/bart win.png",
+    homer: "/images/homer win.jpg",
+    draw: "/images/draw.jpg"
 };
 
 // Variables de jeu
@@ -80,6 +80,8 @@ function showCharacter(cell, character) {
     img.className = 'character-image';
     img.src = IMAGES[character];
     img.alt = character === 'bart' ? 'Bart Simpson' : 'Homer Simpson';
+    img.style.width = '100%'; 
+    img.style.height = '100%'; 
 
     img.onerror = function() {
         console.error(`Error loading image ${character}`);
