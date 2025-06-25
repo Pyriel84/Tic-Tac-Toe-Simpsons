@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe Version Simpson</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1> The Simpsons</h1>
+
+        <div class="game-info">
+            <div class="player-info">
+                <div class="player-name"> Bart</div>
+                <div class="player-score" id="bart-score">0</div>
+            </div>
+            
+            <div class="current-turn" id="current-turn">
+                Tour de Bart
+            </div>
+            
+            <div class="player-info">
+                <div class="player-name"> Homer</div>
+                <div class="player-score" id="homer-score">0</div>
+            </div>
+        </div>
+
+        <div class="game-board" id="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="nouvellePartie()">Nouvelle Partie</button>
+            <button class="btn btn-secondary" onclick="resetScores()">Reset Scores</button>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <h2 id="modal-title"> Félicitations !</h2>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()">Continuer</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
