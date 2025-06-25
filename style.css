@@ -1,6 +1,6 @@
 body {
     font-family: 'Comic Sans MS', cursive, Arial, sans-serif;
-    background-image: url("/images/maison background.webp");
+    background-image: url("./images/maison-background.webp");
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -10,6 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-attachment: fixed;
+    background-color: #87CEEB;
 }
 
 .container {
@@ -73,7 +74,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    background-image: url("/images/canapé score.jpg");
+    background-image: url("./images/canape-score.jpg");
     background-size: cover;
     background-position: center;
     background-color: rgba(255, 255, 255, 0.3);
@@ -278,4 +279,11 @@ h1 {
 .modal p {
     font-size: 2em;
     margin: 20px 0;
+}
+
+.fallback-text {
+    font-size: 2em;
+    color: #FF6347;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
